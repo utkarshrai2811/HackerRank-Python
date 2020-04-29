@@ -9,19 +9,19 @@ inherits all the properties of Person.
 
 
 class Person:
-	def __init__(self, firstName, lastName, idNumber):
-            self.firstName = firstName
-            self.lastName = lastName
-            self.idNumber = idNumber
+	def __init__(self, first_name, last_name, id_number):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.id_number = id_number
 
 	def printPerson(self):
-            print("Name:", self.lastName + ",", self.firstName)
-            print("ID:", self.idNumber)
+            print("Name:", self.last_name + ",", self.first_name)
+            print("ID:", self.id_number)
 
 
 class Student(Person):
-	def __init__(self, firstName, lastName, idNumber, scores):
-            super().__init__(firstName, lastName, idNumber)
+	def __init__(self, first_name, last_name, id_number, scores):
+            super().__init__(first_name, last_name, id_number)
             self.scores = scores
 
 	def calculate(self):
@@ -43,11 +43,11 @@ class Student(Person):
 
 
 line = input().split()
-firstName = line[0]
-lastName = line[1]
+first_name = line[0]
+last_name = line[1]
 idNum = line[2]
 numScores = int(input())
 scores = list(map(int, input().split()))
-s = Student(firstName, lastName, idNum, scores)
+s = Student(first_name, last_name, idNum, scores)
 s.printPerson()
 print("Grade:", s.calculate())
